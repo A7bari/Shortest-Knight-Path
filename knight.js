@@ -101,9 +101,9 @@ function knight(start, finish) {
   
   queue.push(begin);
   while (queue.length != 0) {
-    // evaluate nodes they still in queue
+    // evaluate first node in the queue
     let current = queue.shift();
-    // if this queue is end return
+    // if this queue is 'end' return
     if (current === end) {
       // print path from the end to begining
 
@@ -113,7 +113,7 @@ function knight(start, finish) {
       //   tmp = tmp.previous;
       // }
 
-      // return how many stips we did 
+      
       break;
 
     }
@@ -121,8 +121,7 @@ function knight(start, finish) {
 
     // get its next moves 
     current.nextMove();
-    // if they arn't in the queue already--add them  
-    // or if we didn't check them too
+    //a node isn't in the queue or we didn't check it already -->add it to the queue 
     for (let index = 0; index < current.moves.length; index++) {
 
       let  move = current.moves[index];
