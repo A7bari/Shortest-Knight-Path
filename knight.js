@@ -21,7 +21,7 @@ class KNIGHT {
       console.log(`(${this.row} , ${this.col} == stips :${this.g} )`)
     }
     // Figure out where I can move
-    this.nextMove = function () {
+    this.nextMove = function (grid) {
 
       if (col < 6) {
         if (row < 7) {
@@ -120,7 +120,7 @@ function knight(start, finish) {
     current.cheked = true ; // set this node as cheked
 
     // get its next moves 
-    current.nextMove();
+    current.nextMove(grid);
     //a node isn't in the queue or we didn't check it already -->add it to the queue 
     for (let index = 0; index < current.moves.length; index++) {
 
@@ -132,10 +132,10 @@ function knight(start, finish) {
         //move.show();
       }
     }
-
   }
-  return end.g;
+  let res = end.g;
+  return res;
 }
 
 
-console.log(knight("a1","f7"));
+console.log(knight('a1','f7'));
